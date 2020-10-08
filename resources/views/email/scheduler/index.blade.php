@@ -17,10 +17,12 @@
                     <th colspan="3"></th>
                 </tr>
                 </thead>
-                @foreach($emailScheduler as $scheduler)
-                <tbody>
+
+                @foreach($emailScheduler as $key => $scheduler)
+
+                    <tbody>
                 <tr>
-                    <th scope="row">1</th>
+                    <th scope="row">{{$key+1}}</th>
                     <td>{{$scheduler->email_alias}}</td>
                     <td>{{$scheduler->email_subject}}</td>
                     <td>{{$scheduler->email_body}}</td>
@@ -59,7 +61,7 @@
            // var data = $('#email_scheduler').serialize();
             $.ajax({
                 type: "GET",
-                url:'{{ url('/email/scheduler/send/' . $scheduler->id) }}',
+                url:'{{ url('/email/scheduler/send/'.$scheduler->id) }}',
                // data:data,
                 success: function(){
                     Swal.fire({

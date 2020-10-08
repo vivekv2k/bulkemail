@@ -53,8 +53,8 @@ class EmailManagerController extends Controller
             }
 
         //import excel sheet and save to database
-        return Excel::import(new impUsersDetailsExcelSheet($setBatchId,$setLoginUser), $request->file('file')->store('temp'));
-        return redirect('/email/manager/view');
+         Excel::import(new impUsersDetailsExcelSheet($setBatchId,$setLoginUser), $request->file('file')->store('temp'));
+
     }
 
 

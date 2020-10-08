@@ -34,7 +34,8 @@ class impUsersDetailsExcelSheet implements ToModel, WithStartRow
             'email'  => $row[3],
             'batch_id' => $this->setBatchId,
             'added_user_id' => $this->setLoginUser
-            
+
+
         ]);
     }
 }
