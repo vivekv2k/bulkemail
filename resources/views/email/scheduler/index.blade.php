@@ -61,7 +61,7 @@
            // var data = $('#email_scheduler').serialize();
             $.ajax({
                 type: "GET",
-                url:'{{ url('/email/scheduler/send/'.$scheduler->id) }}',
+                url:'{{ url('/email/scheduler/send/.$scheduler->id') }}',
                // data:data,
                 success: function(){
                     Swal.fire({
